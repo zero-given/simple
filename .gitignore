@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+.next/
+out/
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+api_logs/
+go5_log.txt
+
+# Cache directories
+.cache/
+.npm/
+.eslintcache
+cached_data.json
+
+# Environment files
+.env*
+!.env.example
+config.json
+
+# Test coverage
+coverage/
+.coverage
+htmlcov/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+
+# Package locks
+package-lock.json 

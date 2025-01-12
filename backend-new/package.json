@@ -1,0 +1,17 @@
+{
+  "name": "token-explorer-test-server",
+  "version": "1.0.0",
+  "description": "Test server for Token Explorer",
+  "main": "test-server.js",
+  "scripts": {
+    "start": "node test-server.js",
+    "dev": "nodemon test-server.js"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
