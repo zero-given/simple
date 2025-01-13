@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { TokenEventsList } from '@/components/TokenEventsList';
-import LiveStatusBar from '@/components/LiveStatusBar';
 import { PerformanceMonitor } from '@/components/PerformanceMonitor';
 import { UIColorTweaks, ColorProvider } from '@/components/UIColorTweaks';
 import { useSocket, SocketProvider } from '@/contexts/SocketContext';
+import { MinimizeProvider } from '@/contexts/MinimizeContext';
 import { Token } from '@/types/token';
 import './styles.css';
 import { DebugInfoBar } from '../components/DebugInfoBar';
@@ -19,7 +19,7 @@ function TokenExplorerContent() {
   const [tokens, setTokens] = useState<Token[]>([]);
   const [sortOptions, setSortOptions] = useState<SortOptions>({
     sortBy: 'age',
-    sortDirection: 'desc'
+    sortDirection: 'asc'
   });
   const [filteredAndSortedTokens, setFilteredAndSortedTokens] = useState<Token[]>([]);
   const { socket } = useSocket();
@@ -112,38 +112,35 @@ function TokenExplorerContent() {
 
   return (
     <ColorProvider>
-      <div className="token-explorer">
-        <div className="header-container">
-          <h1 className="page-title">Token Explorer</h1>
-          <LiveStatusBar />
+      <MinimizeProvider>
+        <div className="token-explorer">
+          <DebugInfoBar />
+
+          <UIColorTweaks />
+
+          <div className="filters-bar">
+            <TokenEventsList 
+              tokens={filteredAndSortedTokens}
+              isFilterSection={true}
+              onColorsChange={() => {}}
+              onSortChange={handleSortChange}
+              sortOptions={sortOptions}
+            />
+          </div>
+
+          <div className="tokens-container">
+            <TokenEventsList 
+              tokens={filteredAndSortedTokens}
+              isFilterSection={false}
+              onColorsChange={() => {}}
+              onSortChange={handleSortChange}
+              sortOptions={sortOptions}
+            />
+          </div>
+
+          <PerformanceMonitor />
         </div>
-
-        <DebugInfoBar />
-
-        <UIColorTweaks />
-
-        <div className="filters-bar">
-          <TokenEventsList 
-            tokens={filteredAndSortedTokens}
-            isFilterSection={true}
-            onColorsChange={() => {}}
-            onSortChange={handleSortChange}
-            sortOptions={sortOptions}
-          />
-        </div>
-
-        <div className="tokens-container">
-          <TokenEventsList 
-            tokens={filteredAndSortedTokens}
-            isFilterSection={false}
-            onColorsChange={() => {}}
-            onSortChange={handleSortChange}
-            sortOptions={sortOptions}
-          />
-        </div>
-
-        <PerformanceMonitor />
-      </div>
+      </MinimizeProvider>
     </ColorProvider>
   );
 }

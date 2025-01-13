@@ -236,8 +236,17 @@ const colorConfigs: ColorConfig[] = [
     ]
   },
   {
-    category: 'Layout',
+    category: 'Layout & Containers',
     colors: [
+      {
+        key: 'pageBackground',
+        label: 'Page Background',
+        description: 'Primary color for the page gradient',
+        hasOpacity: true,
+        hasSecondary: true,
+        secondaryKey: 'pageBackgroundSecondary',
+        gradientToggleKey: 'usePageGradient',
+      },
       {
         key: 'headerBackground',
         label: 'Header Background',
@@ -248,13 +257,19 @@ const colorConfigs: ColorConfig[] = [
         gradientToggleKey: 'useHeaderGradient',
       },
       {
-        key: 'pageBackground',
-        label: 'Page Background',
-        description: 'Primary color for the page gradient',
+        key: 'filterBarBackground',
+        label: 'Filter Bar Background',
+        description: 'Primary color for the filter bar gradient',
         hasOpacity: true,
         hasSecondary: true,
-        secondaryKey: 'pageBackgroundSecondary',
-        gradientToggleKey: 'usePageGradient',
+        secondaryKey: 'filterBarBackgroundSecondary',
+        gradientToggleKey: 'useFilterBarGradient',
+      },
+      {
+        key: 'tokenContainerBackground',
+        label: 'Token Container Background',
+        description: 'Background color for the main token container',
+        hasOpacity: true,
       },
       {
         key: 'uiSettingsBackground',
@@ -273,24 +288,15 @@ const colorConfigs: ColorConfig[] = [
         hasSecondary: true,
         secondaryKey: 'connectionBarBackgroundSecondary',
         gradientToggleKey: 'useConnectionBarGradient',
-      },
+      }
     ],
   },
   {
-    category: 'Content',
+    category: 'Token Cards',
     colors: [
       {
-        key: 'filterBarBackground',
-        label: 'Filter Bar Background',
-        description: 'Primary color for the filter bar gradient',
-        hasOpacity: true,
-        hasSecondary: true,
-        secondaryKey: 'filterBarBackgroundSecondary',
-        gradientToggleKey: 'useFilterBarGradient',
-      },
-      {
         key: 'tokenCardBackground',
-        label: 'Token Card Background',
+        label: 'Card Background',
         description: 'Primary color for token cards',
         hasOpacity: true,
         hasSecondary: true,
@@ -299,7 +305,7 @@ const colorConfigs: ColorConfig[] = [
       },
       {
         key: 'tokenInfoBackground',
-        label: 'Token Info Background',
+        label: 'Info Section Background',
         description: 'Background color for token information section',
         hasOpacity: true,
       },
@@ -314,24 +320,12 @@ const colorConfigs: ColorConfig[] = [
         label: 'GoPlus Section Background',
         description: 'Background color for GoPlus analysis section',
         hasOpacity: true,
-      },
+      }
     ],
   },
   {
-    category: 'Text',
+    category: 'Typography',
     colors: [
-      {
-        key: 'headerText',
-        label: 'Header Text',
-        description: 'Text color for the header',
-        hasOpacity: true,
-      },
-      {
-        key: 'filterBarText',
-        label: 'Filter Bar Text',
-        description: 'Text color for all elements in the filter bar (labels, inputs, buttons)',
-        hasOpacity: true,
-      },
       {
         key: 'mainText',
         label: 'Main Text',
@@ -351,9 +345,26 @@ const colorConfigs: ColorConfig[] = [
         hasOpacity: true,
       },
       {
+        key: 'headerText',
+        label: 'Header Text',
+        description: 'Text color for the header',
+        hasOpacity: true,
+      },
+      {
+        key: 'filterBarText',
+        label: 'Filter Bar Text',
+        description: 'Text color for filter bar elements',
+        hasOpacity: true,
+      }
+    ],
+  },
+  {
+    category: 'Section Text Colors',
+    colors: [
+      {
         key: 'tokenInfoLabelText',
         label: 'Token Info Labels',
-        description: 'Color for token information labels (Name, Symbol, etc.)',
+        description: 'Color for token information labels',
         hasOpacity: true,
       },
       {
@@ -365,7 +376,7 @@ const colorConfigs: ColorConfig[] = [
       {
         key: 'tokenHeadingText',
         label: 'Token Info Headings',
-        description: 'Color for token information section titles',
+        description: 'Color for token section titles',
         hasOpacity: true,
       },
       {
@@ -403,24 +414,12 @@ const colorConfigs: ColorConfig[] = [
         label: 'GoPlus Headings',
         description: 'Color for GoPlus section titles',
         hasOpacity: true,
-      },
+      }
     ],
   },
   {
-    category: 'Status & Monitor',
+    category: 'Status & Monitoring',
     colors: [
-      {
-        key: 'perfMonitorBackground',
-        label: 'Performance Monitor Background',
-        description: 'Background color for the performance monitor',
-        hasOpacity: true,
-      },
-      {
-        key: 'perfMonitorText',
-        label: 'Performance Monitor Text',
-        description: 'Text color for the performance monitor',
-        hasOpacity: true,
-      },
       {
         key: 'statusGood',
         label: 'Good Status',
@@ -440,48 +439,25 @@ const colorConfigs: ColorConfig[] = [
         hasOpacity: true,
       },
       {
+        key: 'perfMonitorBackground',
+        label: 'Performance Monitor Background',
+        description: 'Background color for the performance monitor',
+        hasOpacity: true,
+      },
+      {
+        key: 'perfMonitorText',
+        label: 'Performance Monitor Text',
+        description: 'Text color for the performance monitor',
+        hasOpacity: true,
+      },
+      {
         key: 'borderColor',
         label: 'Border Color',
         description: 'Color for borders and dividers',
         hasOpacity: true,
-      },
+      }
     ],
-  },
-  {
-    category: 'Containers',
-    colors: [
-      {
-        key: 'filterBarBackground',
-        label: 'Filter Bar Background',
-        description: 'Primary background color for the filter bar',
-        hasOpacity: true,
-      },
-      {
-        key: 'filterBarBackgroundSecondary',
-        label: 'Filter Bar Background Secondary',
-        description: 'Secondary background color for the filter bar gradient',
-        hasOpacity: true,
-      },
-      {
-        key: 'tokenContainerBackground',
-        label: 'Token Container Background',
-        description: 'Background color for the main token container',
-        hasOpacity: true,
-      },
-      {
-        key: 'statusContainerBackground',
-        label: 'Status Container Background',
-        description: 'Background color for the status container',
-        hasOpacity: true,
-      },
-      {
-        key: 'searchContainerBackground',
-        label: 'Search Container Background',
-        description: 'Background color for the search container',
-        hasOpacity: true,
-      },
-    ],
-  },
+  }
 ];
 
 export const UIColorTweaks: React.FC = () => {

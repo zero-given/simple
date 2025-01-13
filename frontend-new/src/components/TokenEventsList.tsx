@@ -96,6 +96,18 @@ export const TokenEventsList: React.FC<TokenEventsListProps> = ({
                 <option value="asc">Lowest First</option>
               </select>
             </div>
+
+            {/* Debug Info Section */}
+            <div className="debug-info-section">
+              <div className="debug-info-stat">
+                <span className="debug-info-label">Tokens:</span>
+                <span className="debug-info-value">{tokens.length}</span>
+              </div>
+              <div className="debug-info-stat">
+                <span className="debug-info-label">Sort:</span>
+                <span className="debug-info-value">{sortOptions.sortBy} ({sortOptions.sortDirection})</span>
+              </div>
+            </div>
           </div>
         </div>
       ) : (
